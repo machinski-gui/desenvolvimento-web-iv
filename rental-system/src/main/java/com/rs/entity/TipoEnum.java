@@ -1,6 +1,6 @@
 package com.rs.entity;
 
-public enum Tipo {
+public enum TipoEnum {
 	FÍSICA,
 	JURÍDICA;
 }

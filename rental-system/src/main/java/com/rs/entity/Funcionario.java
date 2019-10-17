@@ -18,28 +18,24 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Data
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Entity
-public class Funcionario implements Serializable {
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+public class Funcionario extends AbstractEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
-	@NotBlank
 	@Column(unique = true, nullable = false, length = 20)
+	@NotBlank
 	private String usuario;
 	
 	@Column(nullable = false, length = 20)
+	@NotBlank
 	private String senha;
 	
-	@NotNull
 	@Enumerated(EnumType.ORDINAL)
-	private Cargo cargo;
+	@NotNull
+	private CargoEnum cargo;
 }

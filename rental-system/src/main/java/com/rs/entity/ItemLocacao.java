@@ -18,20 +18,24 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Data
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Entity
-public class ItemLocacao implements Serializable {
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+public class ItemLocacao extends AbstractEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+
+	@NotNull
 	private Locacao locacao;
+	
+	@NotNull
 	private Equipamento equipamento;
+	
+	@NotBlank
 	private Integer quantidade;
+	
+	@NotNull
 	private double valorUnitario;
 }

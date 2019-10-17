@@ -6,9 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -16,32 +13,26 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-@Data
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Entity
-public class Cliente implements Serializable {
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+public class Cliente extends AbstractEntity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
 	
 	@NotBlank
 	private String nome;
 	
+	@Column(unique = true, nullable = false, length = 20)
 	@NotBlank
-	@Column(unique = true, nullable = false, length = 11)
 	private String cpf_cnpj;
 	
-	@NotNull
 	@Enumerated(EnumType.ORDINAL)
-	private Tipo tipo;
+	@NotNull
+	private TipoEnum tipo;
 	
 	@NotBlank
 	private String logradouro;

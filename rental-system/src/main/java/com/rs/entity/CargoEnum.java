@@ -1,5 +1,5 @@
 package com.rs.entity;
 
-public enum Cargo {
+public enum CargoEnum {
 	FUNCIONARIO;
 }

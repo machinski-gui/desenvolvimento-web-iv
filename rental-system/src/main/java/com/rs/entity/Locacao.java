@@ -16,24 +16,19 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Data
-@EqualsAndHashCode
-@ToString
-@NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Entity
-public class Locacao implements Serializable{
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+public class Locacao extends AbstractEntity implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
-	@NotBlank
+	@NotNull
 	private Cliente cliente;
 	
-	@NotBlank
+	@NotNull
 	private Funcionario funcionario;
 	
 	@NotNull
@@ -42,7 +37,7 @@ public class Locacao implements Serializable{
 	@NotNull
 	private LocalDateTime dateDevolucao;
 	
-	@NotBlank
+	@NotNull
 	private double valorTotal;
 	
 	private boolean locacaoAtivo;
