@@ -1,0 +1,1 @@
+INSERT INTO funcionario (id, usuario, senha, cargo) VALUES (1001, 'GUILHERME', '1234', 0);
