@@ -2,6 +2,7 @@ package com.rs.model.service;
 
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.jdbc.Sql;
@@ -9,7 +10,6 @@ import org.springframework.test.context.jdbc.Sql;
 import com.rs.entity.Funcionario;
 import com.rs.service.FuncionarioService;
 
-import org.junit.Assert;;
 
 public class FuncionarioTests extends AbstractIntegrationTests {
 
@@ -17,8 +17,11 @@ public class FuncionarioTests extends AbstractIntegrationTests {
 	private FuncionarioService funcionarioService;
 	
 	@Test
+	@Sql( 
+		"/dataset/funcionarios.sql"
+		)
 	public void listarFuncionarioMustPass() {
 		List<Funcionario> funcionarios = this.funcionarioService.listarFuncionarios();
-		Assert.assertEquals(funcionarios.size(), null);
+		Assert.assertEquals(funcionarios.size(), 1);
 	}
 }
