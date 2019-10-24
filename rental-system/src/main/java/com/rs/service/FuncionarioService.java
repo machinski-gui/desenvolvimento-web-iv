@@ -16,9 +16,22 @@ public class FuncionarioService {
 
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
+
+	public Funcionario cadastrarFuncionario(Funcionario funcionario) {
+		return this.funcionarioRepository.save(funcionario);
+	}
 	
 	public List<Funcionario> listarFuncionarios() {
 		return this.funcionarioRepository.findAll();
 	}
+	
+	public Funcionario atualizarFuncionario(Funcionario funcionario) {
+		return this.funcionarioRepository.save(funcionario);
+	}
+	
+	public void removerFuncionario(long id) {
+		this.funcionarioRepository.deleteById(id);
+	}
+
 	
 }
