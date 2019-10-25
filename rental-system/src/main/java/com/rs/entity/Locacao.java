@@ -35,7 +35,7 @@ public class Locacao extends AbstractEntity implements Serializable{
 	private LocalDateTime dataEmprestimo;
 	
 	@NotNull
-	private LocalDateTime dateDevolucao;
+	private LocalDateTime dataDevolucao;
 	
 	@NotNull
 	private double valorTotal;
