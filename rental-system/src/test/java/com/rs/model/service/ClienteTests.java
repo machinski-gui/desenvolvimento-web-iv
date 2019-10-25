@@ -1,8 +1,11 @@
 package com.rs.model.service;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.jdbc.Sql;
 
 import com.rs.entity.Cliente;
 import com.rs.entity.TipoEnum;
@@ -21,6 +24,8 @@ public class ClienteTests extends AbstractIntegrationTests {
 	 * ========================= CADASTRAR =========================
 	 */
 	@Test
+	@Sql({"/dataset/truncate.sql",
+		"/dataset/cliente.sql"})
 	public void cadastrarClienteMustPass() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
@@ -38,5 +43,42 @@ public class ClienteTests extends AbstractIntegrationTests {
 		cliente.setClienteAtivo(true);
 		clienteService.cadastrarCliente(cliente);
 		Assert.assertNotNull(cliente.getId());
+	}
+	
+	/**
+	 * ========================= LISTAR =========================
+	 */
+	@Test
+	@Sql({"/dataset/truncate.sql",  
+		"/dataset/cliente.sql"})
+	public void listarClienteMustPass() {
+		List<Cliente> clientes = this.clienteRepository.findAll();
+		Assert.assertEquals(clientes.size(), 1);
+	}
+	
+	/**
+	 * ========================= ATUALIZAR =========================
+	 */
+	@Test
+	@Sql({"/dataset/truncate.sql",
+		"/dataset/cliente.sql"})
+	public void atualizarClienteMustPass( ) {
+		Cliente cliente = this.clienteRepository.findById(2L).orElse(null);
+		cliente.setNome("Joao Souza");
+		clienteService.atualizarCliente(cliente);
+		Assert.assertTrue(cliente.getNome().equals("Joao Souza"));
+	}
+	
+	/**
+	 * ========================= REMOVER =========================
+	 */
+	@Test
+	@Sql({"/dataset/truncate.sql",
+		"/dataset/cliente.sql"})
+	public void removerClienteMustPass() {
+		this.clienteService.removerCliente(2);
+		Cliente cliente = this.clienteRepository.findById(2L).orElse(null);
+		Assert.assertNull(cliente);
+		
 	}
 }

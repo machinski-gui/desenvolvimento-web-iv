@@ -25,8 +25,8 @@ public class FuncionarioTests extends AbstractIntegrationTests {
 	 * ========================= CADASTRAR =========================
 	 */
 	@Test
-	@Sql({ "/dataset/truncate.sql",  
-	"/dataset/funcionarios.sql"})
+	@Sql({"/dataset/truncate.sql",  
+		"/dataset/funcionario.sql"})
 	public void cadastrarFuncionarioMustPass() {
 		Funcionario funcionario = new Funcionario();
 		funcionario.setUsuario("Cleberson");
@@ -40,8 +40,8 @@ public class FuncionarioTests extends AbstractIntegrationTests {
 	 * ========================= LISTAR =========================
 	 */
 	@Test
-	@Sql({ "/dataset/truncate.sql",  
-	"/dataset/funcionarios.sql"})
+	@Sql({"/dataset/truncate.sql",  
+		"/dataset/funcionario.sql"})
 	public void listarFuncionarioMustPass() {
 		List<Funcionario> funcionarios = this.funcionarioService.listarFuncionarios();
 		Assert.assertEquals(funcionarios.size(), 1);
@@ -51,8 +51,8 @@ public class FuncionarioTests extends AbstractIntegrationTests {
 	 * ========================= ATUALIZAR =========================
 	 */
 	@Test
-	@Sql({ "/dataset/truncate.sql",  
-	"/dataset/funcionarios.sql"})
+	@Sql({"/dataset/truncate.sql",  
+		"/dataset/funcionario.sql"})
 	public void atualizarFuncionarioMustPass() {
 		Funcionario funcionario = this.funcionarioRepository.findById(2L).orElse(null);
 		funcionario.setSenha("4321");
@@ -64,8 +64,8 @@ public class FuncionarioTests extends AbstractIntegrationTests {
 	 * ========================= REMOVER =========================
 	 */
 	@Test
-	@Sql({ "/dataset/truncate.sql",  
-		"/dataset/funcionarios.sql"})
+	@Sql({"/dataset/truncate.sql",  
+		"/dataset/funcionario.sql"})
 	public void removerFuncionarioMustPass() {
 		this.funcionarioService.removerFuncionario(2);
 		Funcionario funcionario = this.funcionarioRepository.findById(2L).orElse(null);

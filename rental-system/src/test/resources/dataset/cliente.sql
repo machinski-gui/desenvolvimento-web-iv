@@ -1,0 +1,2 @@
+INSERT INTO cliente (id, nome, cpf_cnpj, tipo, logradouro, numero, bairro, municipio, estado, cep, telefone, celular, email, cliente_ativo) 
+VALUES (2, 'Joao Pedro Souza', '123.456.789-10', 0, 'Avenida JK', '526', 'Centro', 'Foz do Iguacu', 'Parana', '74757-199', '(45)3555-8590', '(45)99857-6852', 'joao@mail.com', true);

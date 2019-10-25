@@ -1,0 +1,1 @@
+INSERT INTO equipamento (id, codigo, descricao, preco_equipamento, preco_locacao, estoque, equipamento_ativo) VALUES (2, '8526-5962', 'POTENCIA EUROSOUND 2000W RMS', 1500.00, 150.00, 10, true);

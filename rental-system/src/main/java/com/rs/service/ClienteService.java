@@ -1,5 +1,7 @@
 package com.rs.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,5 +19,17 @@ public class ClienteService {
 	
 	public Cliente cadastrarCliente(Cliente cliente) {
 		return this.clienteRepository.save(cliente);
+	}
+	
+	public List<Cliente> listarClientes() {
+		return this.clienteRepository.findAll();
+	}
+	
+	public Cliente atualizarCliente(Cliente cliente) {
+		return this.clienteRepository.save(cliente);
+	}
+	
+	public void removerCliente(long id) {
+		this.clienteRepository.deleteById(id);
 	}
 }

@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,13 +26,10 @@ public class Equipamento extends AbstractEntity implements Serializable {
 	@NotBlank
 	private String descricao;
 	
-	@NotBlank
 	private double precoEquipamento;
 	
-	@NotBlank
 	private double precoLocacao;
 	
-	@NotBlank
 	private Integer estoque;
 	
 	private boolean equipamentoAtivo;
