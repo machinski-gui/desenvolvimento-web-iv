@@ -16,7 +16,7 @@ import com.rs.service.FuncionarioService;
 public class FuncionarioTests extends AbstractIntegrationTests {
 
 	@Autowired
-	private FuncionarioService funcionarioServicee;
+	private FuncionarioService funcionarioService;
 	
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
