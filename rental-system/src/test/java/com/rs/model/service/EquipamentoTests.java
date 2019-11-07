@@ -48,6 +48,9 @@ public class EquipamentoTests extends AbstractIntegrationTests {
 		Assert.assertEquals(equipamentos.size(), 1);
 	}
 	
+	/**
+	 * ========================= ATUALIZAR =========================
+	 */
 	@Test
 	@Sql({"/dataset/truncate.sql",  
 		"/dataset/equipamento.sql"})

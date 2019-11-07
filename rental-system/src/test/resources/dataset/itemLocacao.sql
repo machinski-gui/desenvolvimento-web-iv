@@ -1,0 +1,1 @@
+INSERT INTO item_locacao (id, locacao_id, equipamento_id, quantidade, valor_unitario) VALUES (1,2,2,25,3000);

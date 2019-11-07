@@ -31,7 +31,5 @@ public class FuncionarioService {
 	
 	public void removerFuncionario(long id) {
 		this.funcionarioRepository.deleteById(id);
-	}
-
-	
+	}	
 }

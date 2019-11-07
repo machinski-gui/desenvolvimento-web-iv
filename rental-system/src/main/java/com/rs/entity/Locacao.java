@@ -3,10 +3,13 @@ package com.rs.entity;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -25,10 +28,10 @@ public class Locacao extends AbstractEntity implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	@NotNull
+	@OneToOne
 	private Cliente cliente;
 	
-	@NotNull
+	@OneToOne
 	private Funcionario funcionario;
 	
 	@NotNull

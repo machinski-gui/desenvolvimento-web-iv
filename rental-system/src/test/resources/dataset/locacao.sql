@@ -1,0 +1,1 @@
+INSERT INTO locacao (id, cliente_id, funcionario_id, data_emprestimo, data_devolucao, valor_total, locacao_ativo) VALUES (2, 2, 2, now(), now(), 300, true);

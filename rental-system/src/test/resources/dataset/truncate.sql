@@ -1,4 +1,5 @@
-TRUNCATE funcionario CASCADE;
 TRUNCATE cliente CASCADE;
 TRUNCATE equipamento CASCADE;
+TRUNCATE funcionario CASCADE;
+TRUNCATE item_locacao CASCADE;
 TRUNCATE locacao CASCADE;
