@@ -1,10 +1,16 @@
 package com.rs.model.service;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
+
+import javax.validation.ValidationException;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.jdbc.Sql;
 
 import com.rs.entity.CargoEnum;
@@ -25,8 +31,7 @@ public class FuncionarioTests extends AbstractIntegrationTests {
 	 * ========================= CADASTRAR =========================
 	 */
 	@Test
-	@Sql({"/dataset/truncate.sql",  
-		"/dataset/funcionario.sql"})
+	@Sql({"/dataset/truncate.sql"})
 	public void cadastrarFuncionarioMustPass() {
 		Funcionario funcionario = new Funcionario();
 		funcionario.setUsuario("Cleberson");
@@ -34,6 +39,39 @@ public class FuncionarioTests extends AbstractIntegrationTests {
 		funcionario.setCargo(CargoEnum.FUNCIONARIO);
 		funcionarioService.cadastrarFuncionario(funcionario);
 		Assert.assertNotNull(funcionario.getId());
+	}
+	
+	@Test(expected = DataIntegrityViolationException.class)
+	@Sql({"/dataset/truncate.sql",  
+		"/dataset/funcionario.sql"})
+	public void cadastrarFuncionarioMustFailUsuarioDuplicado() {
+		Funcionario funcionario = new Funcionario();
+		funcionario.setUsuario("Guilherme");
+		funcionario.setSenha("1234");
+		funcionario.setCargo(CargoEnum.FUNCIONARIO);
+		funcionarioService.cadastrarFuncionario(funcionario);
+	}
+	
+	@Test(expected = ValidationException.class)
+	@Sql({"/dataset/truncate.sql",  
+	"/dataset/funcionario.sql"})
+	public void cadastrarFuncionarioMustFailUsuarioEmBranco() {
+		Funcionario funcionario = new Funcionario();
+		funcionario.setUsuario("");
+		funcionario.setSenha("1234");
+		funcionario.setCargo(CargoEnum.FUNCIONARIO);
+		funcionarioService.cadastrarFuncionario(funcionario);
+	}
+	
+	@Test(expected = ValidationException.class)
+	@Sql({"/dataset/truncate.sql",  
+	"/dataset/funcionario.sql"})
+	public void cadastrarFuncionarioMustFailSenhaEmBranco() {
+		Funcionario funcionario = new Funcionario();
+		funcionario.setUsuario("Cleison");
+		funcionario.setSenha("");
+		funcionario.setCargo(CargoEnum.FUNCIONARIO);
+		funcionarioService.cadastrarFuncionario(funcionario);
 	}
 			
 	/**
@@ -58,6 +96,39 @@ public class FuncionarioTests extends AbstractIntegrationTests {
 		funcionario.setSenha("4321");
 		funcionarioService.atualizarFuncionario(funcionario);
 		Assert.assertTrue(funcionario.getSenha().equals("4321"));
+	}
+	
+	@Test(expected = DataIntegrityViolationException.class)
+	@Sql({"/dataset/truncate.sql",  
+		"/dataset/funcionario.sql"})
+	public void atualizarFuncionarioMustFailUsuarioDuplicado() {
+		Funcionario funcionario = new Funcionario();
+		funcionario.setUsuario("Guilherme");
+		funcionario.setSenha("1234");
+		funcionario.setCargo(CargoEnum.FUNCIONARIO);
+		funcionarioService.atualizarFuncionario(funcionario);
+	}
+	
+	@Test(expected = ValidationException.class)
+	@Sql({"/dataset/truncate.sql",  
+	"/dataset/funcionario.sql"})
+	public void atualizarFuncionarioMustFailUsuarioEmBranco() {
+		Funcionario funcionario = new Funcionario();
+		funcionario.setUsuario("");
+		funcionario.setSenha("1234");
+		funcionario.setCargo(CargoEnum.FUNCIONARIO);
+		funcionarioService.atualizarFuncionario(funcionario);
+	}
+	
+	@Test(expected = ValidationException.class)
+	@Sql({"/dataset/truncate.sql",  
+	"/dataset/funcionario.sql"})
+	public void atualizarFuncionarioMustFailSenhaEmBranco() {
+		Funcionario funcionario = new Funcionario();
+		funcionario.setUsuario("Cleison");
+		funcionario.setSenha("");
+		funcionario.setCargo(CargoEnum.FUNCIONARIO);
+		funcionarioService.atualizarFuncionario(funcionario);
 	}
 	
 	/**

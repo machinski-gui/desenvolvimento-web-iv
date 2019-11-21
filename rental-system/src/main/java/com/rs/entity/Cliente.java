@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -52,13 +53,13 @@ public class Cliente extends AbstractEntity implements Serializable {
 	@NotBlank
 	private String cep;
 	
-	@NotBlank
+	@NotEmpty
 	private String telefone;
 	
-	@NotBlank
+	@NotEmpty
 	private String celular;
 	
-	@NotBlank
+	@NotEmpty
 	private String email;
 		
 	private boolean clienteAtivo;
