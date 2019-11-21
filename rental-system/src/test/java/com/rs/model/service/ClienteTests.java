@@ -51,7 +51,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void cadastrarClienteMustPassNomeEmBranco() {
+	public void cadastrarClienteMustFailNomeEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -72,7 +72,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void cadastrarClienteMustPassCpfCnpjEmBranco() {
+	public void cadastrarClienteMustFailCpfCnpjEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("");
@@ -93,7 +93,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void cadastrarClienteMustPassLogradouroEmBranco() {
+	public void cadastrarClienteMustFailLogradouroEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -114,7 +114,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void cadastrarClienteMustPassNumeroEmBranco() {
+	public void cadastrarClienteMustFailNumeroEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -135,7 +135,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void cadastrarClienteMustPassBairroEmBranco() {
+	public void cadastrarClienteMustFailBairroEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -156,7 +156,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void cadastrarClienteMustPassMunicipioEmBranco() {
+	public void cadastrarClienteMustFailMunicipioEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -177,7 +177,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void cadastrarClienteMustPassEstadoEmBranco() {
+	public void cadastrarClienteMustFailEstadoEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -198,7 +198,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void cadastrarClienteMustPassCepEmBranco() {
+	public void cadastrarClienteMustFailCepEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -219,7 +219,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void cadastrarClienteMustPassTelefoneVazio() {
+	public void cadastrarClienteMustFailTelefoneVazio() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -240,7 +240,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void cadastrarClienteMustPassCelularVazio() {
+	public void cadastrarClienteMustFailCelularVazio() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -261,7 +261,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void cadastrarClienteMustPassEmailVazio() {
+	public void cadastrarClienteMustFailEmailVazio() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -330,7 +330,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void atualizarClienteMustPassNomeEmBranco() {
+	public void atualizarClienteMustFailNomeEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -351,7 +351,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void atualizarClienteMustPassCpfCnpjEmBranco() {
+	public void atualizarClienteMustFailCpfCnpjEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("");
@@ -372,7 +372,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void atualizarClienteMustPassLogradouroEmBranco() {
+	public void atualizarClienteMustFailLogradouroEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -393,7 +393,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void atualizarClienteMustPassNumeroEmBranco() {
+	public void atualizarClienteMustFailNumeroEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -414,7 +414,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void atualizarClienteMustPassBairroEmBranco() {
+	public void atualizarClienteMustFailBairroEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -435,7 +435,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void atualizarClienteMustPassMunicipioEmBranco() {
+	public void atualizarClienteMustFailMunicipioEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -456,7 +456,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void atualizarClienteMustPassEstadoEmBranco() {
+	public void atualizarClienteMustFailEstadoEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -477,7 +477,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void atualizarClienteMustPassCepEmBranco() {
+	public void atualizarClienteMustFailCepEmBranco() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -498,7 +498,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void atualizarClienteMustPassTelefoneVazio() {
+	public void atualizarClienteMustFailTelefoneVazio() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -519,7 +519,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void atualizarClienteMustPassCelularVazio() {
+	public void atualizarClienteMustFailCelularVazio() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
@@ -540,7 +540,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 	@Test(expected = ValidationException.class)
 	@Sql({"/dataset/truncate.sql",
 		"/dataset/cliente.sql"})
-	public void atualizarClienteMustPassEmailVazio() {
+	public void atualizarClienteMustFailEmailVazio() {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");

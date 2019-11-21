@@ -29,9 +29,11 @@ public class Locacao extends AbstractEntity implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@OneToOne
+	@NotNull
 	private Cliente cliente;
 	
 	@OneToOne
+	@NotNull
 	private Funcionario funcionario;
 	
 	@NotNull
@@ -43,5 +45,6 @@ public class Locacao extends AbstractEntity implements Serializable{
 	@NotNull
 	private double valorTotal;
 	
+	@NotNull
 	private boolean locacaoAtivo;
 }

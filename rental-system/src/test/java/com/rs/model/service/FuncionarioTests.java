@@ -85,6 +85,14 @@ public class FuncionarioTests extends AbstractIntegrationTests {
 		Assert.assertEquals(funcionarios.size(), 1);
 	}
 	
+	@Test
+	@Sql({"/dataset/truncate.sql",  
+		"/dataset/funcionario.sql"})
+	public void listarFuncionarioMustPassPorCargoFuncionario() {
+		List<Funcionario> funcionarios = this.funcionarioRepository.findPorCargoFuncionario(null, null, null, null).getContent();
+		Assert.assertEquals(funcionarios.size(), 1);
+	}
+	
 	/**
 	 * ========================= ATUALIZAR =========================
 	 */

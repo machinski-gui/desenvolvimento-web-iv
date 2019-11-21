@@ -29,9 +29,11 @@ public class ItemLocacao extends AbstractEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@OneToOne
+	@NotNull
 	private Locacao locacao;
 	
 	@OneToOne
+	@NotNull
 	private Equipamento equipamento;
 	
 	@NotNull
