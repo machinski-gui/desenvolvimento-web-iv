@@ -14,4 +14,7 @@ public interface ItemLocacaoRepository extends JpaRepository<ItemLocacao, Long> 
 
 	@Query("FROM ItemLocacao itemLocacao ORDER BY itemLocacao.quantidade DESC")
 	public Page<ItemLocacao> findItemLocacaoQuantidade(@Param("locacao") Locacao locacao, @Param("equipamento") Equipamento equipamento, @Param("quantidade") Integer quantidade, @Param("valorUnitario") double valorUnitario, Pageable pageable);
+	
+	@Query("FROM ItemLocacao itemLocacao WHERE itemLocacao.locacao = :id")
+	public Page<ItemLocacao> detalharItemLocacao(@Param("id") Locacao id, Pageable pageable);
 }
