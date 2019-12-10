@@ -22,7 +22,11 @@ public class LocacaoService {
 	}
 	
 	public List<Locacao> listarLocacoes() {
-		return this.locacaoRepository.findAll();
+		return this.locacaoRepository.findTrue(null, null, null, null, 0, false, null).getContent();
+	}
+	
+	public List<Locacao> listarLocacoesInativas() {
+		return this.locacaoRepository.findFalse(null, null, null, null, 0, false, null).getContent();
 	}
 	
 	public Locacao atualizarLocacao(Locacao locacao) {

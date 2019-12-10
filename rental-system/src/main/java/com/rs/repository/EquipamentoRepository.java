@@ -1,5 +1,7 @@
 package com.rs.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -21,4 +23,7 @@ public interface EquipamentoRepository extends JpaRepository<Equipamento, Long> 
 	
 	@Query("FROM Equipamento equipamento WHERE equipamento.equipamentoAtivo = false")
 	public Page<Equipamento> findEquipamentoInativo(@Param("codigo") String codigo, @Param("descricao") String descricao, @Param("precoEquipamento") double precoEquipamento, @Param("precoLocacao") double precoLocacao, @Param("estoque") Integer estoque, @Param("equipamentoAtivo") boolean equipamentoAtivo, Pageable pageable);
+	
+	@Override
+	public Optional<Equipamento> findById(Long id);
 }

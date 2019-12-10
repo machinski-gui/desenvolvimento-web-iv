@@ -36,6 +36,16 @@ public class LocacaoResource {
 	public List<Locacao> listar() {
 		return this.locacaoService.listarLocacoes();
 	}
+	
+	@GetMapping("/listInactive")
+	public List<Locacao> listarInativas() {
+		return this.locacaoService.listarLocacoesInativas();
+	}
+	
+	@PostMapping( "/inactivate" )
+	public Locacao inativar( @RequestBody Locacao locacao ) {
+		return this.locacaoService.atualizarLocacao(locacao);
+	}
 }
 
 

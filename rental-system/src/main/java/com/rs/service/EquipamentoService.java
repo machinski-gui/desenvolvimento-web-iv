@@ -29,6 +29,10 @@ public class EquipamentoService {
 		return this.equipamentoRepository.save(equipamento);
 	}
 	
+	public Equipamento detalharEquipamento(long id) {
+		return this.equipamentoRepository.findById(id).orElse(null);
+	}
+	
 	public void removerEquipamento(long id) {
 		this.equipamentoRepository.deleteById(id);
 	}

@@ -22,4 +22,11 @@ public interface LocacaoRepository extends JpaRepository<Locacao, Long> {
 	
 	@Query("FROM Locacao locacao ORDER BY locacao.dataDevolucao DESC")
 	public Page<Locacao> findLocacaoMaisAntiga(@Param("cliente") Cliente cliente, @Param("funcionario") Funcionario funcionario, @Param("dataEmprestimo") LocalDateTime dataEmprestimo, @Param("dataDevolucao") LocalDateTime dataDevolucao, @Param("valorTotal") double valorTotal, @Param("locacaoAtivo") boolean locacaoAtivo, Pageable pageable);
+	
+	@Query("FROM Locacao locacao WHERE locacao.locacaoAtivo = true")
+	public Page<Locacao> findTrue(@Param("cliente") Cliente cliente, @Param("funcionario") Funcionario funcionario, @Param("dataEmprestimo") LocalDateTime dataEmprestimo, @Param("dataDevolucao") LocalDateTime dataDevolucao, @Param("valorTotal") double valorTotal, @Param("locacaoAtivo") boolean locacaoAtivo, Pageable pageable);
+
+	@Query("FROM Locacao locacao WHERE locacao.locacaoAtivo = false")
+	public Page<Locacao> findFalse(@Param("cliente") Cliente cliente, @Param("funcionario") Funcionario funcionario, @Param("dataEmprestimo") LocalDateTime dataEmprestimo, @Param("dataDevolucao") LocalDateTime dataDevolucao, @Param("valorTotal") double valorTotal, @Param("locacaoAtivo") boolean locacaoAtivo, Pageable pageable);
+
 }
