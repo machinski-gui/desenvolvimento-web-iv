@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rs.entity.Cliente;
+import com.rs.entity.Equipamento;
 import com.rs.service.ClienteService;
 
 @Component
@@ -36,6 +37,11 @@ public class ClienteResource {
 	@PostMapping("/update")
 	public Cliente atualizar( @RequestBody Cliente cliente ) {
 		return this.clienteService.atualizarCliente(cliente);
+	}
+	
+	@GetMapping("/find")
+	public Cliente detalhar(@RequestParam("id") Long id) {
+		return this.clienteService.detalharCliente(id);
 	}
 	
 	@GetMapping("/remove")
