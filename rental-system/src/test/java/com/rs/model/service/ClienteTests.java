@@ -33,7 +33,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -55,7 +55,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -76,7 +76,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -97,7 +97,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -118,7 +118,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("");
 		cliente.setBairro("Jardim Petropolis");
@@ -139,7 +139,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("");
@@ -160,7 +160,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -181,7 +181,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -202,7 +202,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -223,7 +223,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -244,7 +244,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -265,7 +265,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -334,7 +334,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -355,7 +355,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -376,7 +376,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -397,7 +397,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("");
 		cliente.setBairro("Jardim Petropolis");
@@ -418,7 +418,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("");
@@ -439,7 +439,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -460,7 +460,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -481,7 +481,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -502,7 +502,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -523,7 +523,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
@@ -544,7 +544,7 @@ public class ClienteTests extends AbstractIntegrationTests {
 		Cliente cliente = new Cliente();
 		cliente.setNome("Guilherme Machinski");
 		cliente.setCpf_cnpj("124.753.339-52");
-		cliente.setTipo(TipoEnum.FÍSICA);
+		cliente.setTipo(TipoEnum.FISICA);
 		cliente.setLogradouro("Rua Vila Rica");
 		cliente.setNumero("244");
 		cliente.setBairro("Jardim Petropolis");
