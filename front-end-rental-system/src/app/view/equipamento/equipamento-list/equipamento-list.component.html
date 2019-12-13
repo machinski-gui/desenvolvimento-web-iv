@@ -1,0 +1,30 @@
+<table class="table table-responsive" mat-table>
+    <thead> 
+        <tr>
+            <th>ID</th>
+            <th>Codigo</th>
+            <th>Descrição</th>	
+            <th>Valor do Equipamento</th>	
+            <th>Valor da Locação</th>	
+            <th>Estoque</th>	
+            <th></th>
+        </tr>
+    </thead>
+        <tr *ngFor="let equipamento of equipamentoList">
+            <td># {{equipamento.id}} </td>	
+            <td> {{equipamento.codigo}} </td>	
+            <td> {{equipamento.descricao}} </td>	
+            <td>R$ {{equipamento.precoEquipamento}} </td>	
+            <td>R$ {{equipamento.precoLocacao}} </td>		
+            <td> {{equipamento.estoque}} item(ns)</td>
+            <td style="width: 12.3%;">
+                <button class="button" (click)="onEdit(equipamento.id)" mat-raised-button type="button">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                &nbsp;
+                <button class="button" (click)="openDialog(equipamento.id)" mat-raised-button type="button">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </tr>
+</table>

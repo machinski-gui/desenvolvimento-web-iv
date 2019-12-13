@@ -1,0 +1,25 @@
+<table class="table table-responsive" mat-table>
+    <thead> 
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Funcionario</th>	
+            <th>Data de Emprestimo</th>	
+            <th>Data de Devolução</th>	
+            <th>Valor Total</th>	
+            <th></th>
+        </tr>
+    </thead>
+        <tr *ngFor="let locacao of locacaoList">
+            <td (click)="detalhar(locacao.id)"># {{locacao.id}} </td>	
+            <td (click)="detalhar(locacao.id)"> {{locacao.cliente.nome}} </td>	
+            <td (click)="detalhar(locacao.id)"> {{locacao.funcionario.usuario}} </td>	
+            <td (click)="detalhar(locacao.id)"> {{locacao.dataEmprestimo | date: 'dd/MM/yyyy' }} </td>	
+            <td (click)="detalhar(locacao.id)"> {{locacao.dataDevolucao | date: 'dd/MM/yyyy'}} </td>		
+            <td (click)="detalhar(locacao.id)">R$ {{locacao.valorTotal}} </td>
+            <td>
+                <button class="button" (click)="openDialog(locacao)" mat-raised-button [ngStyle]="{'display': display}" type="button"> Devolução</button>
+            </td>
+        </tr>
+</table>
+

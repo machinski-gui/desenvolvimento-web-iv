@@ -1,0 +1,16 @@
+<div fxLayout="column" fxFlex class="div-content">
+    <div fxLayout="row" class="header">
+        <div>
+            <button (click)="navigateToNovaLocacao()" mat-raised-button type="button">Nova Locação</button>
+            &nbsp;      
+            <mat-radio-group #group="matRadioGroup" (change)="tipoLD(group.value)">
+                <mat-radio-button value="1" checked color="primary">Locações</mat-radio-button>
+                &nbsp;
+                <mat-radio-button value="2" color="primary">Devoluções</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>            
+    <div fxFlex>
+        <app-locacao-list></app-locacao-list>
+    </div>
+</div>

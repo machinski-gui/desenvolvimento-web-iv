@@ -1,0 +1,23 @@
+<div>
+    <div class="header">
+        <button mat-raised-button type="button" (click)="navigateToVoltar()">Voltar</button>
+    </div>      
+    <div>
+        <table class="table table-responsive" mat-table>
+            <thead> 
+                <tr>
+                    <th>Locação</th>
+                    <th>Equipamento</th>
+                    <th>Quantidade</th>	
+                    <th>Valor Unitario</th>		
+                    </tr>
+            </thead>
+                <tr *ngFor="let item of itemLocacoes">
+                    <td># {{item.locacao.id}} </td>	
+                    <td> {{item.equipamento.descricao}} </td>	
+                    <td> {{item.quantidade}} item(ns)</td>	
+                    <td>R$ {{item.valorUnitario }} </td>	
+                </tr>
+        </table>
+    </div>
+</div>

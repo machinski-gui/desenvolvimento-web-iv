@@ -1,0 +1,34 @@
+<div style="height: 100vh;">
+    <mat-toolbar>
+        <div fxShow="true" fxHide.gt-sm="true">
+            <button mat-icon-button td-menu-button tdLayoutToggle (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+        <a (click)="navigateToHome()">
+            <span fxLayout="row" fxLayoutAlign="center center" style="height: 100vh; width: 30vh;">Rental System</span>
+        </a>
+      <span class="example-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true" fxLayout="row" fxLayoutAlign="center center" style="height: 100vh; width: 200vh;">
+        <a mat-button (click)="navigateToCliente()">Clientes</a>
+        <a mat-button (click)="navigateToEquipamento()">Equipamentos</a>
+        <a mat-button (click)="navigateToLocacao()">Locações</a>
+      </div>
+      <div fxShow="true" fxHide.lt-md="true" fxLayout="row" fxLayoutAlign="center center" style="height: 100vh; width: 30vh;">
+        <a mat-button (click)="navigateToExit()">Sair&nbsp;<mat-icon>exit_to_app</mat-icon></a>
+      </div>
+    </mat-toolbar>
+    
+    <mat-sidenav-container fxFlexFill class="example-container">
+      <mat-sidenav #sidenav fxLayout="column">
+        <div fxLayout="column">
+          <a mat-button (click)="navigateToCliente()">Clientes</a>
+          <a mat-button (click)="navigateToEquipamento()">Equipamentos</a>
+          <a mat-button (click)="navigateToLocacao()">Locações</a>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content fxFlexFill>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

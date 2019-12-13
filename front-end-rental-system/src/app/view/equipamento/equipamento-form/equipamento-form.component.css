@@ -1,0 +1,13 @@
+.button {
+    background-image: linear-gradient(to bottom, rgba(32,32,32,1), firebrick 75%);
+    color: white;
+    font-size: 15px;
+    width: 100%;
+}
+
+.submit {
+    background-image: linear-gradient(to bottom, rgba(32,32,32,1), green 75%);
+    color: white;
+    font-size: 15px;
+    width: 100%;
+}

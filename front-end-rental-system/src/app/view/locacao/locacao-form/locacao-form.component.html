@@ -1,0 +1,119 @@
+<div fxLayout="row" fxLayoutAlign="center start" style="padding: 10px;">
+    <mat-card class="background-color" fxFlex="95">
+        <form [formGroup]="locacaoForm">
+            <div fxLayout="column" fxFlex=100>
+
+                <div fxLayout="row">
+                   
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Cliente</mat-label>
+                            <input type="text" placeholder="Selecione um Cliente" matInput id="cliente" formControlName="cliente" [matAutocomplete]="autoCliente" required>
+                            <mat-autocomplete #autoCliente="matAutocomplete" [displayWith]="displayCliente" (optionSelected)="selectCliente($event)">
+                                <mat-option *ngFor="let cliente of clienteList" [value]="cliente">
+                                    {{cliente.nome}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                    </div>&nbsp;
+                    
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Funcionario</mat-label>
+                            <input type="text" placeholder="Selecione um Funcionario" matInput id="funcionario" formControlName="funcionario" [matAutocomplete]="autoFuncionario" required>
+                            <mat-autocomplete #autoFuncionario="matAutocomplete" [displayWith]="displayFuncionario" (optionSelected)="selectFuncionario($event)">
+                                <mat-option *ngFor="let funcionario of funcionarioList" [value]="funcionario">
+                                    {{funcionario.usuario}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                    </div>&nbsp;
+                    
+                    
+                    
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <input matInput [matDatepicker]="dataLocacao" placeholder="Data de Locação" formControlName="dataLocacao" required>
+                            <mat-datepicker-toggle matSuffix [for]="dataLocacao"></mat-datepicker-toggle>
+                            <mat-datepicker #dataLocacao></mat-datepicker>
+                        </mat-form-field>
+                    </div>&nbsp;
+                    
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <input matInput [matDatepicker]="dataDevolucao" placeholder="Data de Devolução" formControlName="dataDevolucao" required>
+                            <mat-datepicker-toggle matSuffix [for]="dataDevolucao"></mat-datepicker-toggle>
+                            <mat-datepicker #dataDevolucao></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                
+                <div fxLayout="row">
+
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Equipamento</mat-label>
+                            <input type="text" placeholder="Selecione um Equipamento" matInput id="equipamento" formControlName="equipamento" [matAutocomplete]="autoEquipamento">
+                            <mat-autocomplete #autoEquipamento="matAutocomplete" [displayWith]="displayEquipamento" (optionSelected)="selectEquipamento($event)">
+                                <mat-option *ngFor="let equipamento of equipamentoList" [value]="equipamento"> 
+                                    {{equipamento.descricao}}
+                                    <small>| Estoque: {{equipamento.estoque}} itens</small>
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                    </div>&nbsp;
+
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Quantidade</mat-label>
+                            <input type="number" placeholder="Informe a quantidade" matInput id="quantidade" #quantidade>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <div fxLayout="row">
+                    <div class="example-button-row" fxLayout="row" fxFlex=50>
+                        <button mat-raised-button (click)="addData()" type="button" id="adicionar">Adicionar</button>
+                        &nbsp;
+                    </div> 
+                </div><br>
+                <div fxLayout="row">
+                    <table class="table table-responsive" mat-table>
+                        <thead> 
+                            <tr>
+                                <th>Equipamento</th>
+                                <th>Quantidade</th>
+                                <th>Valor do equipamento</th>
+                                <th>Valor unitario</th>		
+                                <th></th>
+                            </tr>
+                        </thead>
+                            <tr *ngFor="let itemLocacao of itemLocacaoList">
+                                <td>{{itemLocacao.equipamento.descricao}}</td>	
+                                <td>{{itemLocacao.quantidade}}</td>	
+                                <td>R$ {{itemLocacao.equipamento.precoLocacao}}</td>	
+                                <td>R$ {{itemLocacao.valorUnitario}}</td>
+                                <td>
+                                    <button mat-raised-button class="button-option" (click)="onDelete(itemLocacao)" style="width: 100%;" type="button">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+
+                <div fxLayout="row">
+                    <div fxLayout="row" fxFlex=50 class="footer">
+                        <h4> Valor Total: R$ <span id="valorTotal"> 0 </span> </h4>
+                    </div>
+                    &nbsp;
+                    <div fxLayout="row" fxFlex=50 class="footer-button">
+                        <button mat-raised-button (click)="onSaveLocacao()" type="submit">Salvar</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,56 @@
+<div fxLayout="row" fxLayoutAlign="center start" style="padding: 10px; padding-top: 100px;">
+    <mat-card class="background-color" fxFlex="70">
+        <form [formGroup]="equipamentoForm">
+            <div fxLayout="column" fxFlex=100><br>
+
+                <div fxLayout="row">
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Codigo</mat-label>
+                            <input type="text" placeholder="Informe o Codigo" matInput id="codigo" #codigo formControlName="codigo">
+                        </mat-form-field>
+                    </div>&nbsp;
+
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Descrição</mat-label>
+                            <input type="text" placeholder="Informe a Descrição" matInput id="descricao" #descricao formControlName="descricao">
+                        </mat-form-field>
+                    </div>
+                </div><br>
+                
+                <div fxLayout="row">
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Valor do Equipamento</mat-label>
+                            <input type="number" placeholder="Informe o Valor do Equipamento" matInput id="precoEquipamento" #precoEquipamento formControlName="precoEquipamento">
+                        </mat-form-field>
+                    </div>&nbsp;
+    
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Valor da Locação</mat-label>
+                            <input type="number" placeholder="Informe o Valor da Locação" matInput id="precoLocacao" #precoLocacao formControlName="precoLocacao">
+                         </mat-form-field>
+                    </div>&nbsp;
+
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Estoque</mat-label>
+                            <input type="number" placeholder="Informe o Estoque" matInput id="estoque" #estoque formControlName="estoque">
+                        </mat-form-field>
+                    </div>
+                </div><br>
+
+                <div fxLayout="row">
+                    <div
+                     fxLayout="row" fxFlex=100 class="footer-button">
+                        <button class="button" (click)="onBack()" mat-raised-button type="button">Cancelar</button>&nbsp;
+                        <button class="submit" (click)="onSaveEquipamento()" mat-raised-button type="submit">Salvar</button>
+                    </div>
+                </div><br>
+
+            </div>
+         </form>
+    </mat-card>
+</div>

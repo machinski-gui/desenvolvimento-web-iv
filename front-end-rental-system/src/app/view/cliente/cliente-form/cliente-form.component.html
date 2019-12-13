@@ -1,0 +1,117 @@
+<div fxLayout="row" fxLayoutAlign="center start" style="padding: 10px;">
+    <mat-card class="background-color" fxFlex="50">
+        <form [formGroup]="clienteForm">
+            <div fxLayout="column" fxFlex=100>
+
+                <div fxLayout="row">
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Nome Completo</mat-label>
+                            <input type="text" placeholder="Informe o Nome Completo" matInput id="nome" #nome formControlName="nome">
+                        </mat-form-field>
+                    </div>&nbsp;
+
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>CPF/CNPJ</mat-label>
+                            <input type="text" placeholder="Informe o CPF/CNPJ" matInput id="cpf_cnpj" #cpf_cnpj formControlName="cpf_cnpj" [textMask]="{mask: maskCpfCnpj}" [(ngModel)]="myCpfCnpj">
+                        </mat-form-field>
+                    </div>
+                </div>
+                
+                <div fxLayout="row">
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Tipo</mat-label>
+                            <input type="text" placeholder="Selecione um Tipo" matInput id="tipo" formControlName="tipo" [matAutocomplete]="autoTipo" required (blur)="toggle()">
+                            <mat-autocomplete #autoTipo="matAutocomplete" >
+                                <mat-option *ngFor="let tipo of tipoList" [value]="tipo">
+                                    {{tipo}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                    </div>&nbsp;
+    
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Telefone</mat-label>
+                            <input type="text" placeholder="Informe o Telefone" matInput id="telefone" #telefone formControlName="telefone" [textMask]="{mask: maskTelefone}" [(ngModel)]="myTelefone">
+                         </mat-form-field>
+                    </div>&nbsp;
+
+                    <div fxLayout="row" fxFlex=50>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Celular</mat-label>
+                            <input type="text" placeholder="Informe o Celular" matInput id="celular" #celular formControlName="celular" [textMask]="{mask: maskCelular}" [(ngModel)]="myCelular">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div fxLayout="row">
+                    <div fxLayout="row" fxFlex=100>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>E-mail</mat-label>
+                            <input type="email" placeholder="Informe o E-mail" matInput id="email" #email formControlName="email">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div fxLayout="row">
+                    <div fxLayout="row" fxFlex=100>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Logradouro</mat-label>
+                            <input type="text" placeholder="Informe o Logradouro" matInput id="logradouro" #logradouro formControlName="logradouro">
+                        </mat-form-field>
+                    </div>&nbsp;
+
+                    <div fxLayout="row" fxFlex=100>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Numero</mat-label>
+                            <input type="number" placeholder="Informe o Numero" matInput id="numero" #numero formControlName="numero">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayout="row">
+                    <div fxLayout="row" fxFlex=100>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Bairro</mat-label>
+                            <input type="text" placeholder="Informe o Bairro" matInput id="bairro" #bairro formControlName="bairro">
+                        </mat-form-field>
+                    </div>&nbsp;
+                    
+                    <div fxLayout="row" fxFlex=100>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Cidade</mat-label>
+                            <input type="text" placeholder="Informe a Cidade" matInput id="cidade" #cidade formControlName="cidade">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div fxLayout="row">
+                    <div fxLayout="row" fxFlex=100>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>Estado</mat-label>
+                            <input type="text" placeholder="Informe o Estado" matInput id="estado" #estado formControlName="estado">
+                        </mat-form-field>
+                    </div>&nbsp;
+                    
+                    <div fxLayout="row" fxFlex=100>
+                        <mat-form-field fxFlex [floatLabel]="'always'">
+                            <mat-label>CEP</mat-label>
+                            <input type="text" placeholder="Informe o CEP" matInput id="cep" #cep formControlName="cep" [textMask]="{mask: maskCep}" [(ngModel)]="myCep">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div fxLayout="row">
+                    <div
+                     fxLayout="row" fxFlex=100 class="footer-button">
+                        <button class="button" (click)="openDialog()" mat-raised-button type="button">Cancelar</button>&nbsp;
+                        <button class="submit" (click)="onSaveCliente()" mat-raised-button type="submit">Salvar</button>
+                    </div>
+                </div>
+
+            </div>
+         </form>
+    </mat-card>
+</div>

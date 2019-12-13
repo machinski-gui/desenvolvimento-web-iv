@@ -1,0 +1,15 @@
+mat-toolbar {
+    background-image: linear-gradient(to bottom, rgba(32,32,32,1), rgba(128,0,0,1));
+}
+
+mat-icon {
+    color: rgba(255,255,255,0.9);
+}
+
+span {
+    color: rgba(255,255,255,0.9);
+}
+
+mat-toolbar div a {
+    color: rgba(255,255,255,0.9);
+}
